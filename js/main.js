@@ -1,107 +1,85 @@
 //MENU DESPLEGABLE DE GESTION
 
-alert("Hola bienvenido al gestor de pedidos de LA VERDU");
+alert("Hola bienvenido al CALCULADOR:COM");
 
-let nombre = prompt("Ingrese su Nombre:");
+let nombre = prompt("Ingrese su nombre:");
 console.log(nombre);
 
-alert(
-  "Perfecto usted a ingresado los datos correctamente.\nDigame señor: " +
-    nombre +
-    "\n\nA continuacion se muestra el menu de opciones para realizar su pedido..."
-);
+let num1 = parseFloat(prompt("Ingrese el primer numero:"));
+let num2 = parseFloat(prompt("Ingrese el segundo numero:"));
+console.log("Numero 1: " + num1);
+console.log("Numero 2: " + num2);
 
 let opcion;
 let aux;
-let cant;
-let CantManzRoj = 0;
-let CantManzVer = 0;
-let CantNaran = 0;
 
-let TotalManzRoj = 0;
-let TotalManzVer = 0;
-let TotalNaran = 0;
+function suma(n1,n2) {
+  this.primero = n1;
+  this.segundo = n2;
+  let resu = n1 + n2;
+  console.log("RESULTADO DE LA SUMA ES= " + resu);
+  alert("SUMA REALIZADA EXITOSAMENTE\n\n En la consola aparecen los resultados, gracias.");
+}
 
-const frutas = {
-  manzanaRoja: 100,
-  manzanaVerde: 150,
-  naranja: 122,
-};
+function resta(n1,n2) {
+  this.primero = n1;
+  this.segundo = n2;
+  let resu = n1 - n2;
+  console.log("RESULTADO DE LA RESTA ES= " + resu);
+  alert("RESTA REALIZADA EXITOSAMENTE\n\n En la consola aparecen los resultados, gracias.");
+}
 
-const verduras = {
-  lechuga: 70,
-  tomate: 105,
-  berenjena: 170,
-};
+function mult(n1,n2) {
+  this.primero = n1;
+  this.segundo = n2;
+  let resu = n1 * n2;
+  console.log("RESULTADO DE LA MULTIPLICACION ES= " + resu);
+  alert("MULTIPLICACION REALIZADA EXITOSAMENTE\n\n En la consola aparecen los resultados, gracias.");
+}
 
-do {
-  opcion = parseInt(
-    prompt(
-      "MENU PRINCIPAL\nEscriba la opcion que desea acceder:\n1-Pedir frutas\n2-Carrito\n3-Monto total\n4-Salir"
-    )
-  );
-  console.log(opcion);
-} while (opcion < 1 || opcion > 6);
+function divi(n1,n2) {
+  this.primero = n1;
+  this.segundo = n2;
+  let resu = n1 / n2;
+  console.log("RESULTADO DE LA DIVISION ES= " + resu);
+  alert("DIVISION REALIZADA EXITOSAMENTE\n\n En la consola aparecen los resultados, gracias.");
+}
 
-do {
+do{
+opcion = parseInt(prompt("MENU DE CALCULADORA\n\n1-Sumar\n2-Restar\n3-Multiplicar\n4-Dividir\n5-Cambiar numero\n6-Salir\nEliga la opcion que desee:"));
+
+}while(opcion <1 || opcion >6);
+
+while (opcion != 6) {
+  
   switch (opcion) {
     case 1:
-      do {
-        aux = parseInt(prompt(
-          "Usted eligio la opion 1\nEste es nuestro catalogo de frutas:\n\n1-Manzana Roja\n2-Manzana Verde\n3-Naranja\n4-Salir"
-        ));
-      } while (aux < 1 || aux > 4);
-
-      switch (aux) {
-        case 1:
-            cant = parseInt(
-            prompt("Cuantas Manzanas Rojas quiere llevar? ($100 c/u)")
-          );
-            CantManzRoj += cant;
-            TotalManzRoj += cant * frutas.manzanaRoja;
-            console.log(TotalManzRoj);
-          break;
-        case 2:
-          cant = parseInt(
-            prompt("Cuantas Manzanas Verdes quiere llevar? ($150 c/u)")
-          );
-          CantManzVer += cant;
-          TotalManzVer += cant * frutas.manzanaVerde;
-          console.log(TotalManzVer);
-          break;
-        case 3:
-          cant = parseInt(
-            prompt("Cuantas Naranjas quiere llevar? ($122 c/u)")
-          );
-          CantNaran += cant;
-          TotalNaran += cant * frutas.naranja;
-          console.log(TotalNaran);
-          break;
-        default:
-          opcion = -1;
-          break;
-      }
-
+        suma(num1,num2);
       break;
     case 2:
-      if (condition) {
-      }
+        resta(num1,num2);
       break;
     case 3:
+        mult(num1,num2);
       break;
     case 4:
+        divi(num1,num2);
+      break;
+    case 5:
+      num1 = parseFloat(prompt("Ingrese el primer numero:"));
+      num2 = parseFloat(prompt("Ingrese el segundo numero:"));
+      console.log("Numero 1: " + num1);
+      console.log("Numero 2: " + num2);
       break;
     default:
+      alert("ERROR");
       break;
   }
 
-  while (aux < 1 || aux > 4 ){
-    opcion = parseInt(
-      prompt(
-        "MENU PRINCIPAL\nEscriba la opcion que desea acceder:\n1-Pedir frutas\n2-Carrito\n3-Monto total\n4-Salir"
-      )
-    );
-    console.log(opcion);
-      }
+  do{
+    opcion = parseInt(prompt("MENU DE CALCULADORA\n\n1-Sumar\n2-Restar\n3-Multiplicar\n4-Dividir\n5-Cambiar numero\n6-Salir\nEliga la opcion que desee:"));
+    }while(opcion <1 || opcion >6);
 
-} while (opcion == -1);
+}
+
+mensaje
